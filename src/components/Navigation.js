@@ -1,34 +1,37 @@
 import React from 'react';
 import History from './History';
+import "../styles/components/Navigation.scss";
 
 class Navigation extends React.Component{
   constructor(){
     super();
 
     this.state={
-      rankingPercentile:0,
       showHistory:false,
     }
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(){
+  handleClick(event){
+    event.preventDefault()
     this.setState({
-      showHistory:!showHistory,
+      showHistory:!this.state.showHistory,
     })
   }
 
   render(){
     return(
-      <div>
-        <h2>Health Data Analysis</h2>
-        <button onClick={this.handleClick}>Reports</button>
-        <p>Ranking {this.state.rankingPercentile}</p>
+      <div className='navigation'>
+        <h2>{this.props.title}</h2>
+        <div className='below'>
+        <button onClick={this.handleClick}>Records</button>
+        <p>Your {this.props.type} results are heathier than {this.props.ranking}% of your peers</p>
         {this.state.showHistory?
           <ul>
           <History/>
         </ul>: ""}
+        </div>
       </div>
     )
   }

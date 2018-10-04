@@ -1,12 +1,27 @@
-import React from 'react';
+import React from "react";
+import Section from "./Section";
+import '../styles/components/Sections.scss';
 
-class Sections extends React.Component{
-  constructor(){
+class Sections extends React.Component {
+  constructor() {
     super();
   }
 
-  render(){
-    return
+  
+
+  render() {
+    const dataArr = this.props.myData;
+    return (
+      <div className='sections'>
+        {dataArr.map(section => {
+          return <Section
+                  subject={section.subject}
+                  image={section.image}
+                  receiver={this.props.receiver}
+                />;
+        })}
+      </div>
+    );
   }
 }
 

@@ -1,0 +1,14 @@
+.radarDiagram{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+ .recharts-polar-radius-axis-tick{
+
+   tspan{
+     display: none;
+   }
+ }
+
+
+}

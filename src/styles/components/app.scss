@@ -1,3 +1,15 @@
+@import 'parameters';
+
 body {
-  background-color: Cornsilk;
+  font-family: $font-family;
+  color:$font-color;
+  background-color: $background-color;
+  display: flex;
+  flex-flow: column;
+
+  p{
+    font-size: 16px;
+  }
+
+  
 }

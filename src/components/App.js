@@ -1,34 +1,34 @@
+import React from "react";
+import Summary from "./Summary";
+import Blood from "./Blood";
 
-import React from 'react';
-import AggregateData from './AggregateData';
-import Navigation from './Navigation';
-import Notification from './Notification';
-import Sections from './Sections';
 
-import '../styles/components/app.scss';
+import "../styles/components/App.scss";
 
 class App extends React.Component {
-
-  constructor(){
+  constructor() {
     super();
+    this.state = {
+      currentPage:'Summary',
+    };
 
+    this.receiver = this.receiver.bind(this);
+  }
 
+  receiver(subject){
+    this.setState({
+      currentPage:subject
+    })
 
   }
 
-
-
-
-  render(){
-
+  render() {
     return (
-      <div className="personalHomePage">
-        <Navigation/>
-        <AggregateData/>
-        <Notification/>
-        <Sections/>
+      <div>
+        {this.state.currentPage === 'Summary' ? <Summary receiver={this.receiver}/> : null}
+        {this.state.currentPage === 'Blood' ? <Blood receiver={this.receiver}/> : null}
       </div>
-    )
+    );
   }
 }
 
