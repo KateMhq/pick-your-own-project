@@ -28,7 +28,8 @@ class Buttons extends React.Component{
       home:true,
     family:false,
     chat:false,
-  })
+  });
+    this.props.receiver('Summary')
   }
   handleClickFamily(event){
     event.preventDefault();

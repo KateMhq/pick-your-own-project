@@ -1,6 +1,6 @@
 import React from "react";
 import Summary from "./Summary";
-import Blood from "./Blood";
+import Blood from "./blood/Blood";
 
 
 import "../styles/components/App.scss";

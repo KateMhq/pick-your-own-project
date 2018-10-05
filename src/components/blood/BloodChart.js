@@ -11,7 +11,7 @@ import {
   Legend
 } from 'recharts';
 
-import '../styles/components/BloodChart.scss';
+import '../../styles/components/blood/BloodChart.scss';
 
 class BloodChart extends React.Component{
   constructor(){

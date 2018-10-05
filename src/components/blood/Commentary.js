@@ -1,12 +1,14 @@
 import React from "react";
-import '../styles/components/Commentary.scss';
+import '../../styles/components/blood/Commentary.scss';
 import cx from 'classnames';
+import Modal from '../Modal';
 
 class Commentary extends React.Component {
   constructor() {
     super();
     this.state={
-      details:false,
+
+      isOpen:false,
 
     }
     this.handleClick = this.handleClick.bind(this);
@@ -14,25 +16,34 @@ class Commentary extends React.Component {
 
   handleClick(event){
     this.setState({
-      details: !this.state.details,
+      isOpen: !this.state.isOpen,
 
     })
   }
 
   render() {
-    const instruction=this.state.details?'Hide':'Read more';
+    const currentYearResults=this.props.bloodData.find(result => {
+    return  result.year==this.props.currentYear
+  })
+    const yourWBC=currentYearResults? currentYearResults.your_results:'not available';
+
+
 
     return (
       <ul className='whiteBloodCellCommentary'>
         <h3>White blood cells</h3>
         <h3 className='alert'>Too high</h3>
-        <li className='nav' onClick={this.handleClick}>{instruction}</li>
-          {this.state.details?<div className='details'>
+        <li className='nav' onClick={this.handleClick}>Read more</li>
+
+        <Modal className='details' show={this.state.isOpen} onClick={this.handleClick} >
+          <h3 className='alert'>Your white blood cell count is {yourWBC}, exceeding the standard range</h3>
+          <ul>
           <li>
             White blood cells are the cells of the immune system that are involved in
             protecting the body against both infectious disease and foreign
             invaders.
           </li>
+          </ul>
           <h3 className='alert'>Implications of high white blood cells</h3>
           <ul className='explaination'>
           <li>
@@ -49,7 +60,8 @@ class Commentary extends React.Component {
             An immune system disorder that increases white blood cell production
           </li>
           </ul>
-        </div>:null}
+
+      </Modal>
       </ul>
     );
   }

@@ -33,11 +33,11 @@ class Summary extends React.Component {
 
     return (
       <div className='personalHomePage'>
-        <Navigation title='Smart Body Analysis' type='overall' ranking={this.state.overallRankingPercentile}/>
+        <Navigation title='My Health Analysis' type='overall' ranking={this.state.overallRankingPercentile}/>
         <AggregateData myData={this.state.myData} />
         <Notification />
         <Sections myData={this.state.myData} receiver={this.props.receiver}/>
-        <Buttons />
+        <Buttons receiver={this.props.receiver}/>
       </div>
     );
   }

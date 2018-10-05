@@ -2,18 +2,18 @@
 
 ul{
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.whiteBloodCellCommentary{
+.modal{
   display: flex;
   flex-flow: column wrap;
-  background-color: white;
-  padding: 16px;
-  width: 150px;
+  background-color: $background-color;
+  justify-content: center;
+  padding: $content-padding;
+  height: 80%;
 
-  .nav{
-    color: $button-color;
-  }
 
   h3{
     font-size: $normal-font-size;
@@ -29,6 +29,13 @@ ul{
     font-size: $medium-font-size;
   }
   .explaination{
+    padding-left: 1em;
     list-style: circle;
+  }
+  .nav{
+    margin-top:2em;
+    color: $button-color;
+    font-size: $medium-font-size;
+    
   }
 }

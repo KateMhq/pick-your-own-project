@@ -1,11 +1,11 @@
 import React from "react";
-import Navigation from "./Navigation";
-import Notification from "./Notification";
-import Buttons from "./Buttons";
+import Navigation from "../Navigation";
+import Notification from "../Notification";
+import Buttons from "../Buttons";
 import BloodChart from "./BloodChart";
 import Commentary from "./Commentary";
 import cx from "classnames";
-import '../styles/components/Blood.scss';
+import '../../styles/components/blood/Blood.scss';
 
 class Blood extends React.Component {
   constructor() {
@@ -17,6 +17,7 @@ class Blood extends React.Component {
         { year: "2018", your_results: 11900, standard_top: 11000,standard_buttom: 4000 },
 
       ],
+      currentYear:2018,
       bloodRankingPercentile: 95,
     };
   }
@@ -32,9 +33,9 @@ class Blood extends React.Component {
         <Notification />
         <div className='card'>
         <BloodChart bloodData={this.state.bloodData}/>
-        <Commentary />
+        <Commentary bloodData={this.state.bloodData} currentYear={this.state.currentYear}/>
         </div>
-        <Buttons />
+        <Buttons receiver={this.props.receiver}/>
       </div>
     );
   }

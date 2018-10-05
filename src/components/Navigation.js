@@ -26,7 +26,7 @@ class Navigation extends React.Component{
         <h2>{this.props.title}</h2>
         <div className='below'>
         <button onClick={this.handleClick}>Records</button>
-        <p>Your {this.props.type} results are heathier than {this.props.ranking}% of your peers</p>
+        <p>Your {this.props.type} results are heathier than {this.props.ranking}% of your peers!</p>
         {this.state.showHistory?
           <ul>
           <History/>
