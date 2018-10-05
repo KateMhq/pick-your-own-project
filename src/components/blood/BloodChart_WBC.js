@@ -11,16 +11,16 @@ import {
   Legend
 } from 'recharts';
 
-import '../../styles/components/blood/BloodChart.scss';
+import '../../styles/components/blood/BloodChart_WBC.scss';
 
-class BloodChart extends React.Component{
+class BloodChart_WBC extends React.Component{
   constructor(){
     super();
   }
 
   render(){
     return(
-      <ComposedChart className='bloodChart' width={200} height={180} data={this.props.bloodData}>
+      <ComposedChart className='bloodChart' width={200} height={180} data={this.props.whiteBloodCell}>
         <XAxis dataKey="year" label={{ position: 'insideBottomRight', offset: 0 }}/>
         <YAxis className='y__position' label={{ value: "White blood cell", angle: -90, position: 'insideLeft' }}/>
         <Tooltip/>
@@ -34,4 +34,4 @@ class BloodChart extends React.Component{
   }
 };
 
-export default BloodChart;
+export default BloodChart_WBC;

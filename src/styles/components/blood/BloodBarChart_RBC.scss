@@ -1,0 +1,18 @@
+@import '../parameters';
+
+.bloodChart{
+  font-size: $chart-font-size;
+
+  .recharts-default-legend{
+    display: none;
+  }
+  tspan{
+    display: none;
+  }
+  .recharts-cartesian-grid{
+    display: none;
+  }
+  .recharts-cartesian-axis-ticks{
+    display: none;
+  }
+}

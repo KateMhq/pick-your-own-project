@@ -1,9 +1,9 @@
 import React from "react";
-import '../../styles/components/blood/Commentary.scss';
+import '../../styles/components/blood/Commentary_WBC.scss';
 import cx from 'classnames';
 import Modal from '../Modal';
 
-class Commentary extends React.Component {
+class Commentary_WBC extends React.Component {
   constructor() {
     super();
     this.state={
@@ -22,7 +22,7 @@ class Commentary extends React.Component {
   }
 
   render() {
-    const currentYearResults=this.props.bloodData.find(result => {
+    const currentYearResults=this.props.whiteBloodCell.find(result => {
     return  result.year==this.props.currentYear
   })
     const yourWBC=currentYearResults? currentYearResults.your_results:'not available';
@@ -67,4 +67,4 @@ class Commentary extends React.Component {
   }
 }
 
-export default Commentary;
+export default Commentary_WBC;

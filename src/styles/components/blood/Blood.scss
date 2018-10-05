@@ -1,5 +1,19 @@
+
 .card{
   display: flex;
   flex-flow: row wrap;
-  margin: 0 7px;
+  margin: 3px 7px;
+}
+
+.smallCardSections{
+  display: flex;
+  flex-flow: row wrap;
+}
+.smallCard{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 3px 7px;
+  background: white;
+  border:1px solid rgba(0, 0, 0, 0.125);
+  width: 46%;
 }
