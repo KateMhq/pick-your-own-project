@@ -1,0 +1,12 @@
+@import 'parameters';
+
+.bloodChart{
+  font-size: $chart-font-size;
+}
+
+.y__position{
+  text{
+    y:'50';
+    transform: rotate(-90,10,50);
+  }
+}
